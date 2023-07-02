@@ -1,4 +1,5 @@
-function HeadTitle(props) { 
-    return <h1>{props.titulo}</h1>
+export default function Header () {
+    return (
+        <h1>Todo App</h1>
+    )
 }
-export default HeadTitle;

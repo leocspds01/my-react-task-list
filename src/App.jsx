@@ -1,28 +1,65 @@
-import './App.css';
-import  Header  from './Components/Header';
-import { Task } from './Components/Task';
-import {TaskList} from './Components/TaskList';
-
+import { useEffect, useState } from 'react'
+import './App.css'
+import 'react-icons/fa'
+import Header from './Components/Header'
+import Task from './Components/Task'
+import TaskList from './Components/TaskList'
+import TaskEdit from './Components/TaskEdit'
+const TASKS = [
+  {
+    id: 1,
+    task: 'ir al gym'
+  },
+  {
+    id: 2,
+    task: 'ir de compras'
+  },
+  {
+    id: 3,
+    task: 'ir a la cita medica'
+  }
+];
 
 function App() {
-  return (
-    <div className='App'>
-      <Header titulo='Todo App'/>;
-      <Task/>;
-    </div>,
-    <div className='App'>
-    <input className='box' type="textArea" id="name" placeholder="Add new task"/> Add New todo
-    <button className='btn-add' >+</button>
-    </div>,  
-    <div className='counter-task'>
-      <h4>Nº Tareas: 4</h4> 
-      <h4>Pendientes: 3</h4>
-     </div>,
-     <div>
-      <TaskList/>;
-    </div>
+  const [todos, setTodos] = useState([]);
 
- )
+  const addTask =(taskName) => {
+    console.log(`task add from ${taskName}`);
+
+    let newTask = [...todos];
+
+    if (!todos. includes(taskName)) {
+      newTask = [...newTask, taskName];
+    } else {
+      newTask= newTask.filter((task) => taskName !=task);
+    }
+
+    setTodos(newTask);
+    localStorage.setItem("todos", JSON,stringify(newTask));
+  }
+
+  useEffect(() =>{
+    const localStorageData = localStorage.getItem("todos");
+    const storedTodos = JSON.parse(localStorageData);
+
+    setTodos(storedTodos);
+  },[])
+  
+  return (
+    <>
+      <div>
+       <Header/>
+       <Task todos={TASKS}/>
+       <TaskEdit
+       key={TASKS.name}
+       name={TASKS.name}
+       onAddtask = {addTask}
+       />
+       <TaskList/>
+
+      </div>
+    </>
+  )
 }
 
 export default App
