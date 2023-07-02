@@ -1,15 +1,20 @@
-import {FaTrashAlt} from 'react-icons/fa';
-import {FaEdit} from 'react-icons/fa';
+import TaskEdit from "./TaskEdit"
 
-export const Task = (props) => {
-    const {NameTask} = props;
-    return (
-        <li>
-            <input type="checkbox" className='box' /> 
-            {NameTask}
-            <button className="btn-delete"><FaTrashAlt/></button>
-            <button className="btn-edit"><FaEdit/></button>
-
-        </li>
-    )
+export default function Task ({todos}) {
+     return (
+      <>
+      {todos.map(todo => <TaskEdit taskName={todo. task}/>)}
+      </>,
+      <form>
+        <input
+        type='text'
+        className='input-add'
+        name="description"
+        value=''
+        placeholder="New Task"
+        />,
+        <button className="btn-add" type="submit">+</button>
+        </form>         
+     )
+      
 }
