@@ -1,11 +1,7 @@
-import TaskEdit from "./TaskEdit"
+export default function Task () {
 
-export default function Task ({todos}) {
-     return (
-      <>
-      {todos.map(todo => <TaskEdit taskName={todo. task}/>)}
-      </>,
-      <form>
+   return (
+       <form >
         <input
         type='text'
         className='input-add'

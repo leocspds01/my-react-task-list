@@ -1,12 +1,22 @@
-import { FaTrashAlt } from "react-icons/fa";
+import TaskItem from "./TaskItem";
 
-export default function TaskList () {
+export default function TaskList ({
+    task,
+    handleUpdateTask,
+    handleDeleteTask,
+    handleCompleteTask,
+}) {
      return (
-        <li>
-        <span>
-            <label htmlFor=' ' className="cointiner-done"></label>
-        </span>
-        <button className="btn-delete"><FaTrashAlt/></button>
-    </li>
+        <ul>
+            {task.map(task =>( 
+            <TaskItem
+            task={task}
+            handleUpdateTask={handleUpdateTask}
+            handleDeleteTask={handleDeleteTask}
+            handleCompleteTask={handleCompleteTask}
+            />
+            ))}
+        </ul>
+        
      )
 }
