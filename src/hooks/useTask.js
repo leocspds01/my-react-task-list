@@ -6,21 +6,21 @@ export const useTask = () => {
     const initialStates = [];
 
     const init = () => {
-        return JSON.parse (localStorage.getItem('task')) || []
+        return JSON.parse (localStorage.getItem('tasks')) || []
     }
 
-    const [task,dispatch] = useReducer(
+    const [tasks,dispatch] = useReducer(
         taskReducer, 
         initialStates, 
         init
         );
     
-    const taskCount = task.length
-    const pendingTaskCount = task.filter(task => !task.complete).length
+    const tasksCount = tasks.length
+    const pendingTasksCount = tasks.filter(task => !task.complete).length
 
     useEffect(() => {
-        localStorage.setItem('task', JSON.stringify(task))
-    }, [task])
+        localStorage.setItem('tasks', JSON.stringify(tasks))
+    }, [tasks])
     
     const handleNewTask = task => {
         const action = {
@@ -41,7 +41,7 @@ export const useTask = () => {
 
     const handleCompleteTask = id => {
         const action ={
-            type: 'Complete Task',
+            type: 'Complete task',
             payload: id
         }
 
@@ -49,7 +49,7 @@ export const useTask = () => {
     }
     const handleUpdateTask = (id, description) => {
         const action ={
-            type: 'Complete Task',
+            type: 'Update Task',
             payload: {
                 id, 
                 description
@@ -59,9 +59,9 @@ export const useTask = () => {
     }
 
     return {
-        task,
-        taskCount,
-        pendingTaskCount,
+        tasks,
+        tasksCount,
+        pendingTasksCount,
         handleNewTask,
         handleDeleteTask,
         handleCompleteTask,
