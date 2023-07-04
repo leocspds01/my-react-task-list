@@ -90,6 +90,7 @@ ul li form {
 }
 
 .container-complete {
+	
 	background-color: white;
 	width: 24px;
 	height: 24px;
@@ -99,6 +100,7 @@ ul li form {
 }
 
 .container-complete.active {
+	
 	background-color: var(--verde);
 }
 
