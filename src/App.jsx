@@ -1,42 +1,23 @@
 import './App.css'
 import 'react-icons/fa'
-import Header from './Components/Header'
-import Task from './Components/Task'
-import TaskList from './Components/TaskList'
-import { useTask } from './hooks/useTask'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Menu from './pages/Menu'
+import SobreNosotrosPage from './pages/SobreNosotrosPage'
+import TareaPage from './pages/TareaPage'
+import HomePage from './pages/Homepage'
 
 
 function App() {
-
-  const {tasks,
-    tasksCount,
-    pendingTasksCount,
-    handleNewTask,
-    handleDeleteTask,
-    handleCompleteTask,
-    handleUpdateTask} 
-    = useTask ();
-
    return (
-    <div className= "card-to-do">
-    <>
-      <div className='counter-todos'>
-      <h3>N° Tareas: {tasksCount}</h3>
-      <h3>Pendientes: {pendingTasksCount}</h3>
-    </div>
-      <div className='add-todo'>
-       <Header/>
-       <Task handleNewTask={handleNewTask}/>
-       <TaskList
-       tasks={tasks}
-       handleUpdateTask={handleUpdateTask}
-       handleDeleteTask={handleDeleteTask}
-       handleCompleteTask={handleCompleteTask}
-       
-       />
-
-      </div>
-    </>
+    <div>
+    <BrowserRouter>
+      <Menu/>
+      <Routes>
+        <Route path='/' element={<HomePage />}/>
+        <Route path='/sobre-nosotros' element={<SobreNosotrosPage />}/>
+        <Route path='/Tarea/:id' element={<TareaPage />}/>
+      </Routes>
+    </BrowserRouter>
     </div>
   )
 }
