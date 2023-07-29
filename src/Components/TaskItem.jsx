@@ -12,7 +12,7 @@ export default function TaskItem ({
         <span
             onClick={() => handleCompleteTask(task.id)}
         >
-            <label className={`cointiner-complete ${task.complete ? 'active' : ''}`}></label>
+            <label className={`container-complete ${task.complete ? 'active' : ''}`}></label>
         </span>
         <TaskEdit
         task={task} handleUpdateTask={handleUpdateTask}
