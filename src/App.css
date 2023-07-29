@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-  }
+}
 
 :root {
 	--rojo: #ba181b;
@@ -14,11 +14,7 @@
 }
 
 body {
-	font-family: Poppins;
-	max-width: 1200px;
-	margin: 40px auto;
-	display: flex;
-	justify-content: center;
+	background-color: #646566;
 }
 
 .card-to-do {
@@ -26,12 +22,13 @@ body {
 	padding: 25px;
 	border-radius: 20px;
 	width: 700px;
+	background-color: aliceblue;
+	
 }
 
 h1 {
 	text-align: center;
 }
-
 
 .counter-todos {
 	margin: 40px 0;
@@ -85,12 +82,10 @@ ul li form {
 	font-size: 18px;
 	color: #555;
 	width: 100%;
-	/* background-color: #000; */
 	outline: none;
 }
 
 .container-complete {
-	
 	background-color: white;
 	width: 24px;
 	height: 24px;
@@ -100,7 +95,6 @@ ul li form {
 }
 
 .container-complete.active {
-	
 	background-color: var(--verde);
 }
 
@@ -155,7 +149,6 @@ form {
 	font-size: 24px;
 }
 
-
 .input-add {
 	border: none;
 	outline: none;
@@ -172,12 +165,11 @@ form {
 	border: none;
 	background-color: var(--azul);
 	color: #fff;
-    padding: 5px 40px;
+	padding: 5px 40px;
 	border-radius: 20%;
 	font-family: inherit;
 	cursor: pointer;
 	font-size: 17px;
-	
 }
 
 .btn-add:hover {
