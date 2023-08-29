@@ -1,11 +1,10 @@
 import './App.css';
 import 'react-icons/fa';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Menu from './pages/Menu';
-import HomePage from './pages/Homepage';
 import SobreNosotrosPage from './pages/SobreNosotrosPage';
 import TareaPage from './pages/TareaPage';
-
+import HomePage from './pages/Homepage';
 
 export function App() {
   return (
