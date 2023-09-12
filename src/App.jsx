@@ -5,7 +5,7 @@ import Menu from './pages/Menu';
 import SobreNosotrosPage from './pages/SobreNosotrosPage';
 import TareaPage from './pages/TareaPage';
 import HomePage from './pages/Homepage';
-import { ChakraProvider, Box, Grid, GridItem } from '@chakra-ui/react';
+import { ChakraProvider, Box, Grid } from '@chakra-ui/react';
 
 function App() {
   return (
